@@ -17,46 +17,53 @@ export default function Home() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-8">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-violet-300 font-medium">AI Native Enterprise Lab</span>
+          <span className="text-sm text-violet-300 font-medium">Stop Building Software Nobody Wants to Buy</span>
         </div>
 
         {/* Main heading */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gradient mb-4 leading-tight tracking-tight">
-          Hello World, Team 12
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gradient mb-6 leading-tight tracking-tight">
+          Build What Sells
         </h1>
 
-        {/* Team badge */}
-        <div className="mb-8">
-          <span className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
-            <span className="text-2xl font-black text-gradient">12</span>
-            <span className="text-sm text-violet-300 font-medium">AI Native Enterprise Lab</span>
-          </span>
-        </div>
-
         {/* Subtitle */}
-        <p className="text-xl sm:text-2xl text-violet-300/80 font-light mb-8 max-w-xl mx-auto leading-relaxed">
-          Team 12 — Building the future of AI-native applications
+        <p className="text-xl sm:text-2xl text-violet-300/80 font-light mb-8 max-w-2xl mx-auto leading-relaxed">
+          Validate ideas before you build. Talk to customers first. Ship products people actually want to buy.
         </p>
 
-        {/* Feature pills */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {["Next.js", "TypeScript", "Tailwind CSS", "Vercel Deploy"].map((tech) => (
-            <span
-              key={tech}
-              className="px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-violet-300 font-medium hover:bg-white/10 transition-colors"
-            >
-              {tech}
-            </span>
-          ))}
+        {/* Problem/Solution cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
+          <div className="rounded-2xl bg-red-500/10 backdrop-blur-md border border-red-500/20 p-6 text-left">
+            <div className="text-3xl mb-3">❌</div>
+            <h3 className="text-lg font-bold text-red-300 mb-2">The Old Way</h3>
+            <p className="text-sm text-red-200/60">Build first, ask questions later. 70% of software fails because nobody wants it.</p>
+          </div>
+          <div className="rounded-2xl bg-green-500/10 backdrop-blur-md border border-green-500/20 p-6 text-left">
+            <div className="text-3xl mb-3">✅</div>
+            <h3 className="text-lg font-bold text-green-300 mb-2">The Smart Way</h3>
+            <p className="text-sm text-green-200/60">Validate first. Talk to customers. Ship only what people will pay for.</p>
+          </div>
         </div>
 
         {/* CTA Card */}
         <div className="card-glow rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-8 max-w-md mx-auto">
           <div className="text-4xl mb-4">🚀</div>
-          <h2 className="text-xl font-bold text-white mb-2">Ready to Build</h2>
-          <p className="text-violet-300/70 text-sm leading-relaxed">
-            This is Team 12&apos;s AI-powered workspace. We&apos;re crafting the next generation of intelligent web applications.
+          <h2 className="text-xl font-bold text-white mb-2">Ready to Validate?</h2>
+          <p className="text-violet-300/70 text-sm leading-relaxed mb-4">
+            Start by talking to 5 customers before writing a single line of code.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <span className="px-4 py-2 rounded-full bg-violet-500/20 border border-violet-500/30 text-sm text-violet-200">Customer Interviews</span>
+            <span className="px-4 py-2 rounded-full bg-violet-500/20 border border-violet-500/30 text-sm text-violet-200">Landing Pages</span>
+            <span className="px-4 py-2 rounded-full bg-violet-500/20 border border-violet-500/30 text-sm text-violet-200">Pre-orders</span>
+          </div>
+        </div>
+
+        {/* Team badge */}
+        <div className="mt-12">
+          <span className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
+            <span className="text-2xl font-black text-gradient">Team 12</span>
+            <span className="text-sm text-violet-300 font-medium">· AI Native Enterprise Lab</span>
+          </span>
         </div>
       </div>
 
