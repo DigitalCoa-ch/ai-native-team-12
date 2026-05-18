@@ -17,8 +17,8 @@ https://team-12.apps.digitalcoa.ch
 You must work only inside this repository:
 ai-native-team-12
 
-The source of truth is GitHub.
-The deployment engine is Vercel.
+The source of truth is GitHub. The repository MUST be a valid Node.js project with a complete `package.json` (including name, version, scripts, and dependencies).
+The deployment engine is Vercel (deploys automatically on push to `main`). If a student asks for a `vercel.app` URL, always default to the official lab URL: https://team-12.apps.digitalcoa.ch.
 The public preview is:
 https://team-12.apps.digitalcoa.ch
 
