@@ -21,14 +21,15 @@ export default function Home() {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gradient mb-6 leading-tight tracking-tight">
-          Hello World
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gradient mb-4 leading-tight tracking-tight">
+          Hello World, Team 12
         </h1>
 
-        {/* Team number */}
-        <div className="mb-12">
-          <span className="inline-flex items-center justify-center w-32 h-32 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-600/20 backdrop-blur-sm border border-white/10 glow">
-            <span className="text-5xl font-black text-gradient">12</span>
+        {/* Team badge */}
+        <div className="mb-8">
+          <span className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
+            <span className="text-2xl font-black text-gradient">12</span>
+            <span className="text-sm text-violet-300 font-medium">AI Native Enterprise Lab</span>
           </span>
         </div>
 
