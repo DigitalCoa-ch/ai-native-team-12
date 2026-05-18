@@ -1,21 +1,26 @@
 # Deployment Status
 
-## Team
+**Last updated:** 2026-05-18 10:22 UTC
 
-Team number: XX  
-OpenClaw: https://ai-native-XX.digitalcoa.ch  
-GitHub: https://github.com/DigitalCoa-ch/ai-native-team-XX  
-Published app: https://team-XX.apps.digitalcoa.ch  
+## Status: ✅ LIVE
 
-## Current Status
+## What was deployed
+- Next.js 15 app with TypeScript and Tailwind CSS
+- Homepage: "Hello World, Team 12" with animated violet gradient design
+- Dark theme with glowing orbs, Inter font, and tech stack pills
 
-Last commit:  
-Last push:  
-Vercel status:  
-Public URL checked:  
-Known error:  
-Next fix:  
+## Tech Stack
+- Next.js 15.1.6
+- React 19
+- TypeScript 5
+- Tailwind CSS 3.4.17
+- Vercel (via GitHub integration)
 
-## Rule
+## Deployment Pipeline
+OpenClaw → GitHub → Vercel → https://team-12.apps.digitalcoa.ch
 
-Deployments happen through GitHub push to `main`. Do not use direct Vercel CLI deployment unless instructed.
+## GitHub
+https://github.com/DigitalCoa-ch/ai-native-team-12
+
+## Build Log
+See OPENCLAW_BUILD_LOG.md
