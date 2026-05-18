@@ -36,9 +36,14 @@ export default function Home() {
             <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
               <span>🎯</span> Our Mission
             </h2>
+            <p className="text-violet-200/70 leading-relaxed mb-4">
+              To eliminate startup failure by replacing polite assumptions with brutal, data-driven market reality.
+            </p>
+            <p className="text-violet-200/70 leading-relaxed mb-4">
+              We believe founders shouldn't have to burn through their life savings or seed rounds just to find out their product-market fit is flawed.
+            </p>
             <p className="text-violet-200/70 leading-relaxed">
-              Build products people actually want to buy — validate first, build second.
-              The goal is to create an AI-native prototype that demonstrates modern development workflows.
+              By using AI-native simulation to bypass gatekeepers, PersonaForge AI gives early-stage teams immediate, unconditional access to hyper-realistic, radically candid synthetic buyers. We shift entrepreneurship from "build and pray" to "simulate, perfect, and execute"—saving years of wasted human effort.
             </p>
           </div>
 
