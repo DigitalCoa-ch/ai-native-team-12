@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Team 12 — AI Native Enterprise Lab",
-  description: "Welcome to Team 12's AI Native Enterprise Lab project",
+  title: "PersonaForge AI | Stop Building on Assumptions",
+  description: "AI-native customer discovery platform for B2B SaaS founders. Simulate interviews with synthetic enterprise buyers to validate product-market fit before building.",
 };
 
 export default function RootLayout({
