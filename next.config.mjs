@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const config = {
+  experimental: {
+    // Enable Tailwind 4 CSS support
+  },
+};
 
-export default nextConfig;
+export default config;

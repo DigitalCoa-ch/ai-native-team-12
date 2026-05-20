@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --team-primary: #5B21B6;
@@ -26,18 +23,19 @@ body {
   min-height: 100vh;
 }
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-300 via-purple-300 to-violet-400;
-  }
+/* Custom utilities using standard CSS */
+.text-gradient {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #c4b5fd, #a78bfa, #ddd6fe);
+}
 
-  .glow {
-    box-shadow: 0 0 60px rgba(124, 58, 237, 0.4), 0 0 120px rgba(124, 58, 237, 0.2);
-  }
+.glow {
+  box-shadow: 0 0 60px rgba(124, 58, 237, 0.4), 0 0 120px rgba(124, 58, 237, 0.2);
+}
 
-  .card-glow {
-    box-shadow: 0 0 40px rgba(124, 58, 237, 0.3), 0 25px 50px rgba(0, 0, 0, 0.4);
-  }
+.card-glow {
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.3), 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
 /* Animated background orbs */
