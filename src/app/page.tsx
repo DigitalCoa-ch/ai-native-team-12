@@ -1,170 +1,249 @@
+// PersonaForge AI -- Day 1 Landing Page
+
+const personas = [
+  { role: "CISO", concern: "Zero-day risk, compliance, board reporting" },
+  { role: "Procurement Director", concern: "Budget control, vendor risk, ROI" },
+  { role: "IT Integration Manager", concern: "Legacy systems, API limits, downtime" },
+  { role: "Compliance Officer", concern: "GDPR, SOC 2, regulatory exposure" },
+];
+
+const painPoints = [
+  { label: "Slow", desc: "Cold outreach takes weeks. Nobody replies.", color: "bg-red-500/20 border-red-500/30 text-red-200" },
+  { label: "Expensive", desc: "Consultants charge high fees for shallow reports.", color: "bg-orange-500/20 border-orange-500/30 text-orange-200" },
+  { label: "Biased", desc: "Friends say yes. Mentors are polite.", color: "bg-yellow-500/20 border-yellow-500/30 text-yellow-200" },
+  { label: "Network-gated", desc: "If you do not know a CISO, you are stuck.", color: "bg-rose-500/20 border-rose-500/30 text-rose-200" },
+];
+
+const aiPillars = [
+  { title: "Adaptive Personas", desc: "AI-generated buyers with realistic goals, constraints, and objection styles that evolve across interviews." },
+  { title: "Real-Time Reasoning", desc: "The AI does not script answers. Each response is dynamically constructed based on your pitch." },
+  { title: "Memory and Context", desc: "Multi-turn conversations where the buyer remembers your previous claims and challenges inconsistencies." },
+  { title: "Multi-Agent Debate", desc: "Multiple synthetic stakeholders debate your product simultaneously, surfacing hidden organizational tensions." },
+];
+
+const perch = [
+  { title: "Perspective", content: "Early-stage founders need fast, honest validation. But founders are biased toward their own ideas. Enterprise buyers have opposite incentives." },
+  { title: "Evidence", content: "Most startups fail due to no product-market fit. Enterprise buyers are gatekept, expensive, and slow. Simulated interviews cannot fully replicate this." },
+  { title: "Context", content: "Cybersecurity SaaS is risk-sensitive, compliance-heavy, and procurement-driven. PersonaForge is an early validation layer, not final proof of demand." },
+  { title: "Risk", content: "Synthetic realism is the core weakness. AI personas may be too generic, too polite, or too consistent. False-positive validation could lead founders to build the wrong product faster." },
+];
+
+function SectionHeader({ badge, title, subtitle }: { badge: string; title: string; subtitle: string }) {
+  return (
+    <div className="text-center mb-12">
+      <span className="inline-block text-xs font-mono font-bold tracking-widest text-violet-400/60 uppercase mb-4 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20">
+        {badge}
+      </span>
+      <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">{title}</h2>
+      <p className="text-violet-300/60 text-base max-w-xl mx-auto">{subtitle}</p>
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600 rounded-full blur-[120px] opacity-15 animate-float" />
+        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-violet-600 rounded-full blur-[100px] opacity-15 animate-float-slow" />
+        <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-indigo-600 rounded-full blur-[80px] opacity-10 animate-pulse-slow" />
+      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.04)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-8">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-sm text-emerald-300 font-medium font-mono">DAY 1 CONCEPT STAGE</span>
+        </div>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gradient mb-4 tracking-tight leading-tight">PersonaForge AI</h1>
+        <p className="text-lg sm:text-xl text-violet-300/70 font-light mb-6 max-w-xl mx-auto">Stop Building on Assumptions.</p>
+        <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6 mb-10 max-w-2xl mx-auto">
+          <p className="text-violet-200/80 leading-relaxed text-base">
+            <span className="text-red-300 font-semibold">The problem:</span> B2B founders cannot access enterprise decision-makers.
+            Customer discovery is slow, expensive, and gatekept.
+            By the time you learn your thesis is wrong, you have already burned months and capital.
+          </p>
+        </div>
+        <p className="text-xl sm:text-2xl text-white font-semibold mb-4">Simulate interviews with AI-generated enterprise buyers.</p>
+        <p className="text-violet-300/60 text-base mb-10 max-w-lg mx-auto">
+          Pitch to a CISO, a Procurement Director, or a Compliance Officer -- generated on the fly,
+          challenged in real time, summarized instantly.
+        </p>
+        <div className="inline-flex flex-col items-center gap-3 px-8 py-6 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-center">
+          <span className="text-amber-300 text-sm font-medium">Interactive prototype coming next</span>
+          <p className="text-amber-200/60 text-xs max-w-sm">This page explains the concept. The live simulation engine is being built now.</p>
+        </div>
+      </div>
+      <div className="absolute top-6 left-6 w-20 h-20 border-l-2 border-t-2 border-violet-500/20 rounded-tl-xl" />
+      <div className="absolute bottom-6 right-6 w-20 h-20 border-r-2 border-b-2 border-violet-500/20 rounded-br-xl" />
+    </section>
+  );
+}
+
+function Problem() {
+  return (
+    <section className="relative py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeader badge="THE PAIN" title="Customer Discovery Is Broken" subtitle="Founders rely on methods that are slow, expensive, biased, and gatekept." />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {painPoints.map((p) => (
+            <div key={p.label} className={"rounded-xl border p-5 " + p.color}>
+              <span className="text-2xl mb-3 block font-bold">{p.label}</span>
+              <p className="text-sm opacity-80 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 text-center">
+          <p className="text-violet-200/70 text-sm leading-relaxed max-w-2xl mx-auto">
+            <span className="text-white font-semibold">The real cost:</span> Most startups fail due to weak product-market fit --
+            not technical ability. Founders who spend 6 months building before validating lose time, money, and investor confidence.
+            PersonaForge AI shifts discovery earlier and faster.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PersonasSection() {
+  return (
+    <section className="relative py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeader badge="WHO YOU WILL MEET" title="Synthetic Enterprise Buyers" subtitle="Each persona is a distinct stakeholder type with unique concerns, incentives, and objection styles." />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {personas.map((p) => (
+            <div key={p.role} className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6 text-center hover:border-violet-500/30 transition-colors">
+              <h3 className="text-white font-bold mb-2">{p.role}</h3>
+              <p className="text-violet-300/60 text-xs leading-relaxed">{p.concern}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-center">
+          <p className="text-cyan-200/80 text-sm">
+            <span className="font-semibold">Why this matters:</span> In enterprise B2B, you do not sell to one person.
+            Multiple stakeholders with conflicting priorities determine every deal.
+            PersonaForge AI surfaces these tensions before you go to market.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HowItWorks() {
+  const steps = [
+    { n: "01", title: "Describe your product idea", desc: "Enter your startup concept, target market, and core value proposition." },
+    { n: "02", title: "AI classifies buyer types", desc: "The system identifies which enterprise roles are most relevant to your deal." },
+    { n: "03", title: "Simulate discovery interviews", desc: "Pitch to multiple synthetic personas and receive realistic questions and objections." },
+    { n: "04", title: "Multi-agent debate", desc: "AI stakeholders debate your product simultaneously, revealing hidden organizational conflicts." },
+    { n: "05", title: "Get a validation report", desc: "Receive a structured risk summary with confidence warnings and next-step recommendations." },
+  ];
+  return (
+    <section className="relative py-24 px-6">
+      <div className="max-w-4xl mx-auto">
+        <SectionHeader badge="THE WORKFLOW" title="How PersonaForge AI Works" subtitle="Five steps from product idea to validated insight." />
+        <div className="space-y-4">
+          {steps.map((s) => (
+            <div key={s.n} className="flex items-start gap-5 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 hover:border-violet-500/30 transition-colors">
+              <span className="text-3xl font-black text-violet-400/60 tabular-nums">{s.n}</span>
+              <div>
+                <h3 className="text-white font-bold mb-1">{s.title}</h3>
+                <p className="text-violet-300/60 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhyAI() {
+  return (
+    <section className="relative py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeader badge="WHY AI-NATIVE" title="AI Is the Product, Not a Feature" subtitle="PersonaForge AI is structurally impossible without real-time AI reasoning." />
+        <div className="grid sm:grid-cols-2 gap-4">
+          {aiPillars.map((p) => (
+            <div key={p.title} className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
+              <h3 className="text-white font-bold mb-2">{p.title}</h3>
+              <p className="text-violet-300/60 text-sm leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 rounded-2xl bg-rose-500/10 border border-rose-500/20 p-6">
+          <h3 className="text-rose-300 font-bold mb-3 flex items-center gap-2">Oxygen Test</h3>
+          <p className="text-rose-200/80 text-sm leading-relaxed">
+            <span className="font-semibold">If AI is removed, PersonaForge AI collapses.</span> Without AI, the platform becomes
+            static persona PDFs, basic database templates, or pre-written interview scripts.
+            The core value -- dynamic real-time conversations with evolving synthetic enterprise buyers -- disappears entirely.
+          </p>
+          <p className="text-rose-200/60 text-xs mt-3">This is what makes it AI-native, not AI-enabled.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PERCHSection() {
+  return (
+    <section className="relative py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeader badge="EVIDENCE AND RISK" title="PERCH Analysis" subtitle="What we know, what we do not know, and what could go wrong." />
+        <div className="grid sm:grid-cols-2 gap-4">
+          {perch.map((p) => (
+            <div key={p.title} className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
+              <h3 className="text-white font-bold mb-3">{p.title}</h3>
+              <p className="text-violet-300/60 text-sm leading-relaxed">{p.content}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 rounded-2xl bg-violet-500/10 border border-violet-500/20 p-6 text-center">
+          <p className="text-violet-200/80 text-sm max-w-2xl mx-auto leading-relaxed">
+            <span className="font-semibold text-white">Key risk:</span> Synthetic realism is unproven. PersonaForge AI can show that the
+            workflow is plausible -- it cannot prove that AI-generated feedback predicts real purchasing behavior.
+            The tool is best used as an <span className="italic">early validation and preparation layer</span>,
+            not as final proof of market demand.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NextSteps() {
+  const roadmap = [
+    { day: "Day 1", status: "Done", item: "Concept page and PERCH analysis", done: true },
+    { day: "Day 2", status: "Building", item: "Interactive prototype -- persona selection and pitch input", done: false },
+    { day: "Day 3", status: "Planned", item: "AI interview simulation and multi-agent debate engine", done: false },
+  ];
+  return (
+    <section className="relative py-24 px-6">
+      <div className="max-w-3xl mx-auto text-center">
+        <SectionHeader badge="ROADMAP" title="What Comes Next" subtitle="This page explains the concept. The prototype proves the workflow." />
+        <div className="grid sm:grid-cols-3 gap-4 mb-8">
+          {roadmap.map((d) => (
+            <div key={d.day} className={"rounded-2xl border p-5 text-center " + (d.done ? "bg-emerald-500/10 border-emerald-500/20" : "bg-white/5 border-white/10")}>
+              <div className={"text-xs font-mono font-bold mb-2 " + (d.done ? "text-emerald-400" : "text-violet-400")}>{d.day}</div>
+              <div className={"text-sm font-bold mb-2 " + (d.done ? "text-emerald-300" : "text-white")}>{d.status}</div>
+              <p className="text-violet-300/60 text-xs leading-relaxed">{d.item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Animated background orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-20 animate-float" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-violet-600 rounded-full blur-3xl opacity-20 animate-float-slow" />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-indigo-600 rounded-full blur-3xl opacity-15 animate-pulse-slow" />
-        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-10 animate-float" />
-      </div>
-
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
-
-      {/* Main content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-20">
-        {/* Team badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-8">
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-violet-300 font-medium">AI Native Enterprise Lab</span>
-        </div>
-
-        {/* Main heading */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gradient mb-4 leading-tight tracking-tight">
-          Team 12
-        </h1>
-        <p className="text-xl sm:text-2xl text-violet-300/80 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-          Stop Building Software Nobody Wants to Buy
-        </p>
-
-        {/* Project identity cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12 text-left max-w-4xl mx-auto">
-          
-          {/* Mission */}
-          <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
-            <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <span>🎯</span> Our Mission
-            </h2>
-            <p className="text-violet-200/70 leading-relaxed mb-4">
-              To eliminate startup failure by replacing polite assumptions with brutal, data-driven market reality.
-            </p>
-            <p className="text-violet-200/70 leading-relaxed mb-4">
-              We believe founders shouldn't have to burn through their life savings or seed rounds just to find out their product-market fit is flawed.
-            </p>
-            <p className="text-violet-200/70 leading-relaxed">
-              By using AI-native simulation to bypass gatekeepers, PersonaForge AI gives early-stage teams immediate, unconditional access to hyper-realistic, radically candid synthetic buyers. We shift entrepreneurship from "build and pray" to "simulate, perfect, and execute"—saving years of wasted human effort.
-            </p>
-          </div>
-
-          {/* OpenClaw Workbench */}
-          <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
-            <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <span>🤖</span> OpenClaw Workbench
-            </h2>
-            <p className="text-violet-200/70 leading-relaxed mb-3">
-              This project is powered by OpenClaw — an AI-native development workbench.
-            </p>
-            <a href="https://ai-native-12.digitalcoa.ch" target="_blank" rel="noopener noreferrer"
-               className="text-sm text-violet-400 hover:text-violet-300 transition-colors underline">
-              ai-native-12.digitalcoa.ch
-            </a>
-          </div>
-
-          {/* Workflow */}
-          <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
-            <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <span>⚙️</span> Our Workflow
-            </h2>
-            <div className="flex flex-wrap gap-2 text-xs">
-              {["Inspect repo", "Smallest change", "npm install", "npm run build", "Fix errors", "Update docs", "Commit", "Push to main"].map((step, i) => (
-                <span key={step} className="flex items-center gap-1 px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/30 text-violet-200">
-                  {i + 1}. {step}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
-            <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <span>🔧</span> Tech Stack
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {["Next.js", "TypeScript", "Tailwind CSS", "npm", "Vercel"].map((tech) => (
-                <span key={tech} className="px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/30 text-sm text-violet-200">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* What We've Done */}
-          <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6 md:col-span-2">
-            <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <span>✅</span> What We've Built
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <ul className="space-y-2 text-violet-200/70">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-400 mt-0.5">✓</span>
-                  <span>GitHub repo connected: DigitalCoa-ch/ai-native-team-12</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-400 mt-0.5">✓</span>
-                  <span>Vercel deployment pipeline with auto-deploy on push</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-400 mt-0.5">✓</span>
-                  <span>Fixed Turbopack CSS @import order for Next.js 16</span>
-                </li>
-              </ul>
-              <ul className="space-y-2 text-violet-200/70">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-400 mt-0.5">✓</span>
-                  <span>Live homepage with "Build What Sells" messaging</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-400 mt-0.5">✓</span>
-                  <span>Memory and documentation system in place</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-400 mt-0.5">⏳</span>
-                  <span>Custom domain team-12.apps.digitalcoa.ch pending DNS</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Links */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <a href="https://github.com/DigitalCoa-ch/ai-native-team-12" target="_blank" rel="noopener noreferrer"
-             className="px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-violet-300 hover:bg-white/10 hover:border-violet-500/30 transition-all">
-            <span className="mr-2">📦</span>GitHub Repository
-          </a>
-          <a href="https://team-12-chi.vercel.app" target="_blank" rel="noopener noreferrer"
-             className="px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-violet-300 hover:bg-white/10 hover:border-violet-500/30 transition-all">
-            <span className="mr-2">🚀</span>Live App
-          </a>
-          <a href="https://ai-native-12.digitalcoa.ch" target="_blank" rel="noopener noreferrer"
-             className="px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-violet-300 hover:bg-white/10 hover:border-violet-500/30 transition-all">
-            <span className="mr-2">🤖</span>OpenClaw Workbench
-          </a>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-8 inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
-          <span className="text-2xl font-black text-gradient">Team 12</span>
-          <span className="text-sm text-violet-300">·</span>
-          <span className="text-sm text-violet-300 font-medium">AI Native Enterprise Lab</span>
-        </div>
-      </div>
-
-      {/* Bottom status bar */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 text-xs text-violet-400/50 font-mono">
-        <span>Next.js 16</span>
-        <span className="w-1 h-1 rounded-full bg-violet-400/30" />
-        <span>TypeScript</span>
-        <span className="w-1 h-1 rounded-full bg-violet-400/30" />
-        <span>Tailwind CSS</span>
-        <span className="w-1 h-1 rounded-full bg-violet-400/30" />
-        <span>Vercel</span>
-      </div>
-
-      {/* Corner decorations */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-violet-500/20 rounded-tl-3xl" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-violet-500/20 rounded-br-3xl" />
+    <main>
+      <Hero />
+      <Problem />
+      <PersonasSection />
+      <HowItWorks />
+      <WhyAI />
+      <PERCHSection />
+      <NextSteps />
     </main>
   );
 }
